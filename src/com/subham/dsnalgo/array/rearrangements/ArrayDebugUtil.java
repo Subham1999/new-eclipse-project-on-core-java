@@ -23,4 +23,15 @@ public final class ArrayDebugUtil {
 	    }
 	}
     }
+
+    public int partition(int[] a, final int pivot) {
+	int j = 0;
+	for (int i = 0; i < a.length; ++i) {
+	    if (a[i] > pivot) {
+		swap(a, j, i);
+		++j;
+	    }
+	}
+	return j;
+    }
 }

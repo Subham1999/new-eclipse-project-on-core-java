@@ -18,19 +18,14 @@ package com.subham.dsnalgo.array.rearrangements;
 public class MoveAllZerosToEndOfTheArray {
     private static final ArrayDebugUtil ARRAY_UTIL = new ArrayDebugUtil();
 
-    private int partition(int[] a, final int pivot) {
+    private void solve(int[] a) {
 	int j = 0;
 	for (int i = 0; i < a.length; ++i) {
-	    if (a[i] > pivot) {
+	    if (a[i] > 0) {
 		ARRAY_UTIL.swap(a, j, i);
 		++j;
 	    }
 	}
-	return j;
-    }
-
-    private void solve(int[] a) {
-	partition(a, 0);
 	ARRAY_UTIL.print(a);
     }
 
